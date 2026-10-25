@@ -3,228 +3,263 @@
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#087443">
-<title>Study Bharat - पढ़ाई और परीक्षा तैयारी</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Study Bharat | Learn & Test</title>
 <style>
-:root{--green:#087443;--dark:#075b36;--bg:#f2f7f4;--white:#fff;--text:#17251d}
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:var(--bg);color:var(--text)}
-header{background:linear-gradient(135deg,#087443,#063f2b);color:white;padding:23px 16px;text-align:center}
-header h1{margin:0;font-size:28px}
-header p{margin:8px 0 0}
-nav{display:flex;gap:8px;padding:10px;overflow:auto;background:white;position:sticky;top:0;z-index:5;box-shadow:0 2px 6px #0001}
-nav button{white-space:nowrap;margin:0;background:#e4f4e9;color:#075b36}
-button{border:0;border-radius:10px;padding:12px 15px;background:var(--green);color:white;font-size:15px;font-weight:bold;cursor:pointer}
-button:disabled{opacity:.6}
-main{max-width:850px;margin:auto;padding:14px}
-.panel{background:white;padding:17px;border-radius:15px;margin:14px 0;box-shadow:0 3px 12px #0000000a}
-h2{font-size:21px;margin:0 0 12px}
-.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-.tile{background:#e9f6ed;color:#075b36;text-align:left;min-height:88px}
-input,textarea,select{width:100%;padding:12px;border:1px solid #ccd8cf;border-radius:9px;font-size:16px;margin:6px 0 12px;background:white}
-textarea{resize:vertical}
-#answer,#gameFeedback{white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.6}
-.question{font-size:18px;font-weight:bold;margin:14px 0}
-.option{display:block;width:100%;text-align:left;margin:8px 0;background:#edf6ef;color:#17462d}
-footer{text-align:center;padding:25px;color:#5c6e61;font-size:13px}
-.small{font-size:13px;color:#66756a}
-.hidden{display:none}
-@media(min-width:600px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}main{padding:22px}}
+body{margin:0;font-family:Arial,sans-serif;background:#f3f7f5;color:#183129}
+header{padding:24px 16px;background:linear-gradient(135deg,#075e45,#10a879);color:white}
+header h1{margin:0 0 8px}
+nav{display:flex;overflow-x:auto;gap:8px;padding:10px;background:white;position:sticky;top:0}
+button{border:0;border-radius:9px;padding:11px 14px;background:#087f5b;color:white;font-size:15px;cursor:pointer}
+nav button{white-space:nowrap}
+main{max-width:850px;margin:auto;padding:12px}
+.card{background:white;padding:16px;border-radius:14px;margin:12px 0;box-shadow:0 2px 8px #0000000b}
+h2{color:#087f5b}
+select,input,textarea{width:100%;padding:12px;margin:7px 0 14px;border:1px solid #cbd9d1;border-radius:8px;font-size:16px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.item{background:#e5f6ed;color:#075e45;text-align:left}
+.hidden{display:none!important}
+.answer{display:block;width:100%;text-align:left;margin:8px 0;background:#eaf4ef;color:#183129}
+.muted{font-size:13px;color:#64756d;line-height:1.5}
+a{color:#087f5b}
+footer{text-align:center;padding:20px}
 </style>
 </head>
 <body>
 <header>
-  <h1>🇮🇳 Study Bharat</h1>
-  <p>सीखें • अभ्यास करें • सफलता की ओर बढ़ें</p>
-  <p>School Exams | Government Exams | AI Teacher</p>
+<h1>📚 Study Bharat</h1>
+<p>Class 1–12 • School Tests • Government Exams • AI Teacher</p>
 </header>
-
 <nav>
-  <button onclick="showSection('home')">होम</button>
-  <button onclick="showSection('teacher')">AI Teacher</button>
-  <button onclick="showSection('games')">Quiz Games</button>
-  <button onclick="showSection('papers')">Exam Papers</button>
+<button onclick="show('home')">Home</button>
+<button onclick="show('school')">Classes 1–12</button>
+<button onclick="show('tests')">All Tests</button>
+<button onclick="show('govt')">Govt Exams</button>
+<button onclick="show('ai')">AI Teacher</button>
 </nav>
-
 <main>
-<section id="home" class="section">
-  <div class="panel">
-    <h2>आपका Study Dashboard 📚</h2>
-    <p>स्कूल की पढ़ाई और सरकारी नौकरी की परीक्षा के लिए अभ्यास करें।</p>
-    <div class="grid">
-      <button class="tile" onclick="showSection('teacher')">🤖<br>AI Teacher<br><small>सवाल पूछें</small></button>
-      <button class="tile" onclick="showSection('games')">🎯<br>Quiz Games<br><small>ज्ञान जाँचें</small></button>
-      <button class="tile" onclick="showSection('papers')">📄<br>Exam Papers<br><small>अभ्यास सामग्री</small></button>
-      <button class="tile" onclick="showSection('games');startQuiz('math')">➗<br>Maths Practice<br><small>गणित सीखें</small></button>
-      <button class="tile" onclick="showSection('games');startQuiz('english')">🔤<br>English Practice<br><small>अंग्रेज़ी सीखें</small></button>
-      <button class="tile" onclick="showSection('games');startQuiz('reasoning')">🧠<br>Reasoning<br><small>तर्कशक्ति बढ़ाएँ</small></button>
-    </div>
-  </div>
-  <div class="panel">
-    <h2>⭐ आपका अभ्यास स्कोर</h2>
-    <p>कुल सही उत्तर: <strong id="totalCorrect">0</strong></p>
-    <p>कमाए गए स्टार: <strong id="totalStars">0</strong> ⭐</p>
-  </div>
+<section id="home" class="screen">
+<div class="card">
+<h2>स्वागत है! Welcome!</h2>
+<p>अपनी कक्षा चुनें, टेस्ट दें और सरकारी परीक्षाओं की तैयारी करें।</p>
+<button onclick="show('school')">Start Learning</button>
+<button onclick="show('tests')">Take a Test</button>
+</div>
+<div class="card">
+<h2>📊 My Progress</h2>
+<p>कुल टेस्ट: <b id="testCount">0</b></p>
+<p>औसत स्कोर: <b id="avgScore">0%</b></p>
+<div id="history"></div>
+</div>
 </section>
 
-<section id="teacher" class="section hidden">
-  <div class="panel">
-    <h2>🤖 Study Bharat AI Teacher</h2>
-    <p>हिंदी या English में अपना सवाल पूछें।</p>
-    <textarea id="question" rows="4" maxlength="2000" placeholder="जैसे: भारत की राजधानी क्या है?"></textarea>
-    <button id="askButton" onclick="askAI()">जवाब पाएँ</button>
-    <p id="aiStatus" role="status"></p>
-    <div id="answer"></div>
-    <p class="small">AI के जवाब में गलती हो सकती है। महत्वपूर्ण तथ्यों को किताब या आधिकारिक स्रोत से जाँचें।</p>
-  </div>
+<section id="school" class="screen hidden">
+<div class="card">
+<h2>📚 School Learning</h2>
+<label>कक्षा चुनें / Select Class</label>
+<select id="classSelect" onchange="loadSubjects()"></select>
+<div id="subjects" class="grid"></div>
+<p id="subjectInfo" class="muted">विषय चुनें।</p>
+<p><a href="https://www.biharboardonline.org/" target="_blank" rel="noopener">Bihar Board Official Website</a></p>
+</div>
 </section>
 
-<section id="games" class="section hidden">
-  <div class="panel">
-    <h2>🎯 Learning Games</h2>
-    <p>एक विषय चुनें और 5 सवालों का क्विज़ खेलें।</p>
-    <div class="grid">
-      <button onclick="startQuiz('general')">🌏 सामान्य ज्ञान</button>
-      <button onclick="startQuiz('math')">➗ Maths</button>
-      <button onclick="startQuiz('english')">🔤 English</button>
-      <button onclick="startQuiz('reasoning')">🧠 Reasoning</button>
-    </div>
-  </div>
-  <div class="panel">
-    <div id="quizArea">क्विज़ शुरू करने के लिए ऊपर कोई विषय चुनें।</div>
-  </div>
+<section id="tests" class="screen hidden">
+<div class="card">
+<h2>📝 Online Tests</h2>
+<label>कक्षा / Class</label>
+<select id="testClass"></select>
+<label>विषय / Subject</label>
+<select id="testSubject">
+<option>गणित</option><option>विज्ञान</option>
+<option>English</option><option>हिंदी</option>
+<option>सामान्य ज्ञान</option>
+</select>
+<label>टेस्ट का प्रकार / Test Type</label>
+<select id="testType">
+<option>Daily Practice</option>
+<option>Chapter Test</option>
+<option>Unit Test</option>
+<option>Monthly Test</option>
+<option>Half-Yearly</option>
+<option>Annual Exam</option>
+<option>Mock Test</option>
+<option>Revision Test</option>
+</select>
+<button onclick="startTest()">Start Test</button>
+<div id="quiz"></div>
+<div id="result"></div>
+</div>
 </section>
 
-<section id="papers" class="section hidden">
-  <div class="panel">
-    <h2>📄 Previous Year & Model Papers</h2>
-    <p>अपनी परीक्षा के आधिकारिक प्रश्नपत्र खोजें। इस शुरुआती संस्करण में प्रश्नपत्रों का डेटाबेस अभी जोड़ा नहीं गया है।</p>
-    <label for="examSearch">परीक्षा या कक्षा का नाम</label>
-    <input id="examSearch" placeholder="जैसे Bihar Board Class 10">
-    <button onclick="searchPapers()">प्रश्नपत्र खोजें</button>
-    <div id="paperLinks"></div>
-    <p class="small">खोज परिणाम बाहरी वेबसाइट से खुलेंगे। डाउनलोड करने से पहले स्रोत और दस्तावेज़ जाँचें।</p>
-  </div>
+<section id="govt" class="screen hidden">
+<div class="card">
+<h2>🏛️ Government Exam Preparation</h2>
+<p>परीक्षा का नाम चुनकर आधिकारिक वेबसाइट, सिलेबस और नोटिस देखें।</p>
+<div id="examLinks"></div>
+<p class="muted">Exam dates, eligibility और syllabus को नवीनतम official notification से जाँचें।</p>
+</div>
+<div class="card">
+<h2>🎯 General Competitive Practice</h2>
+<p>सामान्य ज्ञान, गणित, रीजनिंग और English का अभ्यास टेस्ट दें।</p>
+<button onclick="show('tests')">Practice MCQ Test</button>
+</div>
+</section>
+
+<section id="ai" class="screen hidden">
+<div class="card">
+<h2>🤖 AI Teacher</h2>
+<p>हिंदी या English में सवाल पूछें।</p>
+<textarea id="question" rows="4" placeholder="अपना सवाल लिखें / Ask your question"></textarea>
+<button onclick="askAI()">Ask AI Teacher</button>
+<p id="aiStatus" class="muted"></p>
+<div id="aiAnswer" style="white-space:pre-wrap;line-height:1.6"></div>
+</div>
 </section>
 </main>
-
-<footer>Study Bharat © 2026 · पढ़ें, सीखें और आगे बढ़ें</footer>
+<footer>Study Bharat © Learn Every Day 🌱</footer>
 
 <script>
-function showSection(id){
-  document.querySelectorAll('.section').forEach(s=>s.classList.add('hidden'));
-  document.getElementById(id).classList.remove('hidden');
-  window.scrollTo({top:0,behavior:'smooth'});
-}
-const WORKER_URL="https://stadybharat.skybro03at.workers.dev/";
-
-async function askAI(){
-  const q=document.getElementById('question').value.trim();
-  const status=document.getElementById('aiStatus');
-  const answer=document.getElementById('answer');
-  const btn=document.getElementById('askButton');
-  if(!q){status.textContent="पहले अपना सवाल लिखें।";return;}
-  btn.disabled=true;status.textContent="AI जवाब तैयार कर रहा है...";answer.textContent="";
-  try{
-    const res=await fetch(WORKER_URL,{
-      method:"POST",
-      headers:{"Content-Type":"application/json"},
-      body:JSON.stringify({question:q})
-    });
-    const data=await res.json();
-    if(!res.ok)throw new Error(data.details||data.error||"API अनुरोध विफल हुआ");
-    answer.textContent=data.answer||"कोई जवाब नहीं मिला।";
-    status.textContent="";
-  }catch(e){
-    status.textContent="जवाब नहीं मिला। इंटरनेट, Worker और API Secret जाँचें।";
-  }finally{btn.disabled=false;}
-}
-
-const questions={
-general:[
-{q:"भारत की राजधानी क्या है?",o:["मुंबई","नई दिल्ली","पटना","जयपुर"],a:1},
-{q:"भारत का राष्ट्रीय पशु कौन है?",o:["शेर","हाथी","बाघ","घोड़ा"],a:2},
-{q:"एक सप्ताह में कितने दिन होते हैं?",o:["5","6","7","8"],a:2},
-{q:"भारत का स्वतंत्रता दिवस कब है?",o:["15 अगस्त","26 जनवरी","2 अक्टूबर","14 नवंबर"],a:0},
-{q:"बिहार की राजधानी क्या है?",o:["गया","पटना","आरा","भागलपुर"],a:1}],
-math:[
-{q:"12 + 8 = ?",o:["18","20","22","24"],a:1},
-{q:"9 × 7 = ?",o:["56","63","72","49"],a:1},
-{q:"100 का आधा कितना है?",o:["25","40","50","75"],a:2},
-{q:"144 ÷ 12 = ?",o:["10","11","12","14"],a:2},
-{q:"15 − 6 = ?",o:["7","8","9","10"],a:2}],
-english:[
-{q:"'Apple' का अर्थ क्या है?",o:["सेब","आम","केला","अंगूर"],a:0},
-{q:"I ___ a student.",o:["is","am","are","be"],a:1},
-{q:"'पानी' का English शब्द?",o:["Fire","Food","Water","Air"],a:2},
-{q:"'Good morning' का अर्थ?",o:["शुभ रात्रि","सुप्रभात","धन्यवाद","अलविदा"],a:1},
-{q:"Plural of 'book'?",o:["bookes","books","bookies","book"],a:1}],
-reasoning:[
-{q:"2, 4, 6, 8, अगली संख्या?",o:["9","10","11","12"],a:1},
-{q:"A, B, C, D, अगला अक्षर?",o:["E","F","G","H"],a:0},
-{q:"इनमें अलग कौन है?",o:["सेब","आम","गाजर","केला"],a:2},
-{q:"5, 10, 15, अगली संख्या?",o:["18","20","25","30"],a:1},
-{q:"यदि आज सोमवार है, तो कल कौन-सा दिन होगा?",o:["रविवार","मंगलवार","बुधवार","शुक्रवार"],a:1}]
+const subjectsByClass={
+1:["हिंदी","English","गणित","पर्यावरण"],
+2:["हिंदी","English","गणित","पर्यावरण"],
+3:["हिंदी","English","गणित","पर्यावरण अध्ययन"],
+4:["हिंदी","English","गणित","पर्यावरण अध्ययन"],
+5:["हिंदी","English","गणित","पर्यावरण अध्ययन"],
+6:["हिंदी","English","गणित","विज्ञान","सामाजिक विज्ञान","संस्कृत"],
+7:["हिंदी","English","गणित","विज्ञान","सामाजिक विज्ञान","संस्कृत"],
+8:["हिंदी","English","गणित","विज्ञान","सामाजिक विज्ञान","संस्कृत"],
+9:["हिंदी","English","गणित","विज्ञान","सामाजिक विज्ञान","संस्कृत"],
+10:["हिंदी","English","गणित","विज्ञान","सामाजिक विज्ञान","संस्कृत"],
+11:["हिंदी","English","भौतिकी","रसायन विज्ञान","जीव विज्ञान","गणित","इतिहास","भूगोल","अर्थशास्त्र"],
+12:["हिंदी","English","भौतिकी","रसायन विज्ञान","जीव विज्ञान","गणित","इतिहास","भूगोल","अर्थशास्त्र"]
 };
-let currentQuiz=[],questionIndex=0,score=0,answered=false;
-function startQuiz(type){
-  currentQuiz=questions[type]||questions.general;
-  questionIndex=0;score=0;
-  showSection('games');renderQuestion();
+const examData=[
+["BPSC","https://bpsc.bihar.gov.in/"],
+["Bihar Police (BPSSC)","https://bpssc.bihar.gov.in/"],
+["Bihar Staff Selection Commission","https://bssc.bihar.gov.in/"],
+["Bihar School Examination Board","https://www.biharboardonline.org/"],
+["UPSC","https://upsc.gov.in/"],
+["SSC","https://ssc.gov.in/"],
+["Railway Recruitment Boards","https://indianrailways.gov.in/"],
+["Institute of Banking Personnel Selection","https://www.ibps.in/"],
+["State Bank of India Careers","https://sbi.co.in/web/careers"],
+["Indian Air Force","https://indianairforce.nic.in/"]
+];
+const bank={
+"गणित":[
+["12 × 8 = ?",["86","96","108","88"],1],
+["√144 = ?",["10","12","14","16"],1],
+["त्रिभुज के कोणों का योग?",["90°","180°","270°","360°"],1],
+["25% = ?",["1/2","1/3","1/4","3/4"],2],
+["2x=10, x=?",["2","4","5","10"],2]
+],
+"विज्ञान":[
+["जल का सूत्र?",["CO2","H2O","O2","NaCl"],1],
+["बल की SI इकाई?",["जूल","वाट","न्यूटन","वोल्ट"],2],
+["पौधे प्रकाश संश्लेषण में कौन-सी गैस लेते हैं?",["ऑक्सीजन","कार्बन डाइऑक्साइड","नाइट्रोजन","हीलियम"],1],
+["हृदय का मुख्य काम?",["रक्त पंप करना","भोजन पचाना","हवा लेना","देखना"],0],
+["विद्युत धारा की इकाई?",["एम्पियर","मीटर","किलोग्राम","जूल"],0]
+],
+"English":[
+["Past tense of go?",["Goed","Gone","Went","Going"],2],
+["Opposite of hot?",["Warm","Cold","Fast","Tall"],1],
+["Plural of child?",["Childs","Childes","Children","Childrens"],2],
+["Choose correct: She ___ to school.",["go","goes","going","gone"],1],
+["___ apple.",["A","An","At","No"],1]
+],
+"हिंदी":[
+["दिन का विलोम?",["सुबह","रात","सूरज","प्रकाश"],1],
+["जल का समानार्थी?",["आग","नीर","वायु","धरा"],1],
+["संज्ञा किसका नाम बताती है?",["नाम","काम","गति","केवल गुण"],0],
+["सुंदर का विलोम?",["अच्छा","कुरूप","साफ","मधुर"],1],
+["प्रश्न के अंत में कौन-सा चिह्न?",["?","!",";",":"],0]
+],
+"सामान्य ज्ञान":[
+["बिहार की राजधानी?",["गया","पटना","आरा","भागलपुर"],1],
+["भारत का संविधान कब लागू हुआ?",["1947","1949","1950","1952"],2],
+["भारत का राष्ट्रीय पशु?",["शेर","बाघ","हाथी","घोड़ा"],1],
+["एक सप्ताह में दिन?",["5","6","7","8"],2],
+["भारत की राजधानी?",["मुंबई","नई दिल्ली","पटना","कोलकाता"],1]
+]
+};
+const $=id=>document.getElementById(id);
+function show(id){
+document.querySelectorAll(".screen").forEach(s=>s.classList.add("hidden"));
+$(id).classList.remove("hidden");window.scrollTo(0,0);
+}
+function fillClassSelect(id){
+$(id).innerHTML=Array.from({length:12},(_,i)=>`<option value="${i+1}">कक्षा ${i+1}</option>`).join("");
+}
+function loadSubjects(){
+const c=$("classSelect").value, box=$("subjects");box.innerHTML="";
+subjectsByClass[c].forEach(subject=>{
+const b=document.createElement("button");b.className="item";b.textContent=subject;
+b.onclick=()=>{$("subjectInfo").textContent="कक्षा "+c+" • "+subject+" चुना गया। टेस्ट टैब से अभ्यास करें।";$("testClass").value=c;$("testSubject").value=bank[subject]?subject:"सामान्य ज्ञान";};
+box.appendChild(b);
+});
+}
+function loadExams(){
+$("examLinks").innerHTML="";
+examData.forEach(e=>{
+const p=document.createElement("p"),a=document.createElement("a");
+a.href=e[1];a.target="_blank";a.rel="noopener";a.textContent=e[0]+" — Official Website ↗";
+p.appendChild(a);$("examLinks").appendChild(p);
+});
+}
+let qs=[],qi=0,score=0,locked=false;
+function startTest(){
+const subject=$("testSubject").value;
+qs=bank[subject]||bank["सामान्य ज्ञान"];
+qi=0;score=0;
+$("result").innerHTML="";
+$("quiz").innerHTML="<p>"+$("testType").value+" • कक्षा "+$("testClass").value+"</p><div id='questionBox'></div>";
+renderQuestion();
 }
 function renderQuestion(){
-  answered=false;
-  const area=document.getElementById('quizArea');
-  if(questionIndex>=currentQuiz.length){
-    const stars=Math.floor(score/1);
-    const oldCorrect=Number(localStorage.getItem('sbCorrect')||0);
-    const oldStars=Number(localStorage.getItem('sbStars')||0);
-    localStorage.setItem('sbCorrect',oldCorrect+score);
-    localStorage.setItem('sbStars',oldStars+stars);
-    updateScore();
-    area.innerHTML=`<h2>क्विज़ पूरा हुआ! 🎉</h2><p>स्कोर: ${score}/${currentQuiz.length}</p><p>स्टार: ${stars} ⭐</p><button onclick="startQuiz('general')">फिर खेलें</button>`;
-    return;
-  }
-  const q=currentQuiz[questionIndex];
-  area.innerHTML=`<p>सवाल ${questionIndex+1}/${currentQuiz.length}</p><div class="question"></div><div id="options"></div><p id="gameFeedback" role="status"></p>`;
-  area.querySelector('.question').textContent=q.q;
-  const opts=area.querySelector('#options');
-  q.o.forEach((op,i)=>{
-    const b=document.createElement('button');
-    b.className='option';b.textContent=op;
-    b.onclick=()=>chooseAnswer(i);
-    opts.appendChild(b);
-  });
+const box=$("questionBox");
+if(qi>=qs.length){
+const pct=Math.round(score/qs.length*100);
+const rec={class:$("testClass").value,subject:$("testSubject").value,type:$("testType").value,score,total:qs.length,pct,date:new Date().toLocaleDateString()};
+let h=JSON.parse(localStorage.getItem("sbHistory")||"[]");h.unshift(rec);h=h.slice(0,30);localStorage.setItem("sbHistory",JSON.stringify(h));
+$("result").innerHTML=`<h3>Test Complete!</h3><p>स्कोर: ${score}/${qs.length} (${pct}%)</p><button onclick="startTest()">Retry Test</button>`;
+$("quiz").innerHTML="";updateHistory();return;
 }
-function chooseAnswer(i){
-  if(answered)return;answered=true;
-  const q=currentQuiz[questionIndex];
-  const feedback=document.getElementById('gameFeedback');
-  if(i===q.a){score++;feedback.textContent="सही जवाब! ⭐";}
-  else{feedback.textContent="सही जवाब: "+q.o[q.a];}
-  document.querySelectorAll('#options button').forEach(b=>b.disabled=true);
-  const next=document.createElement('button');
-  next.textContent=questionIndex===currentQuiz.length-1?"परिणाम देखें":"अगला सवाल";
-  next.onclick=()=>{questionIndex++;renderQuestion();};
-  feedback.after(next);
+locked=false;const q=qs[qi];
+box.innerHTML=`<h3>प्रश्न ${qi+1}/${qs.length}: ${q[0]}</h3><div id="options"></div><p id="feedback"></p>`;
+q[1].forEach((opt,i)=>{
+const b=document.createElement("button");b.className="answer";b.textContent=opt;
+b.onclick=()=>{
+if(locked)return;locked=true;
+if(i===q[2]){score++;b.style.background="#c8f5d7";$("feedback").textContent="सही उत्तर! Correct!";}
+else{$("feedback").textContent="सही उत्तर: "+q[1][q[2]];}
+$("options").querySelectorAll("button").forEach(x=>x.disabled=true);
+const n=document.createElement("button");n.textContent=qi===qs.length-1?"रिजल्ट देखें":"Next Question";n.onclick=()=>{qi++;renderQuestion();};box.appendChild(n);
+};$("options").appendChild(b);
+});
 }
-function updateScore(){
-  document.getElementById('totalCorrect').textContent=localStorage.getItem('sbCorrect')||0;
-  document.getElementById('totalStars').textContent=localStorage.getItem('sbStars')||0;
+function updateHistory(){
+const h=JSON.parse(localStorage.getItem("sbHistory")||"[]");
+$("testCount").textContent=h.length;
+$("avgScore").textContent=h.length?Math.round(h.reduce((a,x)=>a+x.pct,0)/h.length)+"%":"0%";
+$("history").innerHTML=h.slice(0,5).map(x=>`<p>कक्षा ${x.class} • ${x.subject} • ${x.score}/${x.total} (${x.pct}%)</p>`).join("")||"अभी कोई टेस्ट नहीं दिया।";
 }
-function searchPapers(){
-  const q=document.getElementById('examSearch').value.trim();
-  const out=document.getElementById('paperLinks');
-  out.textContent="";
-  if(!q){out.textContent="पहले परीक्षा या कक्षा का नाम लिखें।";return;}
-  const link=document.createElement('a');
-  link.href="https://www.google.com/search?q="+encodeURIComponent(q+" previous year question paper PDF official");
-  link.target="_blank";link.rel="noopener noreferrer";
-  link.textContent="इस परीक्षा के प्रश्नपत्र खोजें";
-  out.appendChild(link);
+async function askAI(){
+const q=$("question").value.trim();if(!q){$("aiStatus").textContent="पहले सवाल लिखें।";return;}
+$("aiStatus").textContent="AI Teacher जवाब तैयार कर रहा है...";
+$("aiAnswer").textContent="";
+try{
+const r=await fetch("https://stadybharat.skybro03at.workers.dev/",{
+method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({question:q})
+});
+if(!r.ok)throw Error("HTTP "+r.status);
+const d=await r.json();$("aiAnswer").textContent=d.answer||"जवाब नहीं मिला।";$("aiStatus").textContent="";
+}catch(e){$("aiStatus").textContent="AI Teacher से कनेक्शन नहीं हुआ। Cloudflare Worker और API सेटिंग जाँचें।";}
 }
-updateScore();
+fillClassSelect("classSelect");fillClassSelect("testClass");
+loadSubjects();loadExams();updateHistory();
 </script>
 </body>
-</html>
+  </html>
+  
