@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#123b2a">
+<title>Study Bharat | Books, Tests & AI Teacher</title>
+<style>
+:root{--green:#176b45;--dark:#123b2a;--gold:#ffd166;--bg:#f4f7f5;--card:#fff;--text:#17231c;--muted:#607168;--line:#dce6df}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:var(--text)}
+header{background:linear-gradient(135deg,var(--dark),var(--green));color:white;padding:22px 16px 18px}
+.wrap{max-width:980px;margin:auto}header h1{margin:0;font-size:28px}header p{margin:6px 0 0;color:#e1f2e8}
+nav{display:flex;gap:8px;overflow:auto;padding:10px;background:white;position:sticky;top:0;z-index:5;border-bottom:1px solid var(--line)}
+nav button{white-space:nowrap;border:0;border-radius:10px;padding:10px 13px;background:#e9f2ec;color:var(--dark);font-weight:700}
+main{max-width:980px;margin:auto;padding:14px}.section{display:none}.section.active{display:block}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;margin:12px 0;box-shadow:0 3px 12px #123b2a0a}
+h2{font-size:21px;margin:0 0 10px}h3{margin:8px 0}p{line-height:1.5}.muted{color:var(--muted);font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+label{display:block;font-weight:650;margin:10px 0 5px}select,input,textarea{width:100%;padding:12px;border:1px solid #cbd8cf;border-radius:10px;background:white;font:inherit}
+.btn,a.btn{display:inline-block;text-decoration:none;border:0;border-radius:10px;background:var(--green);color:white;padding:11px 14px;font-weight:750;cursor:pointer;text-align:center}
+.btn.secondary{background:#e7f1ea;color:var(--dark)}.btn.gold{background:var(--gold);color:#2b2b18}.full{width:100%}
+.booklink{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:13px;border:1px solid var(--line);border-radius:12px;margin:8px 0;text-decoration:none;color:var(--text);background:#fff}
+.booklink small{display:block;color:var(--muted);font-weight:400;margin-top:3px}
+.pill{display:inline-block;background:#e7f3eb;color:#176b45;padding:4px 8px;border-radius:20px;font-size:12px;font-weight:700}
+#questionArea{margin-top:12px}.qbox{padding:14px;border:1px solid var(--line);border-radius:12px;margin:10px 0;background:white}
+.option{display:flex;gap:8px;align-items:flex-start;padding:10px;border:1px solid var(--line);border-radius:9px;margin:7px 0;font-weight:400;cursor:pointer}
+.option input{width:auto;margin-top:4px}.correct{border-color:#1b8b52;background:#e9f8ef}.wrong{border-color:#c74444;background:#fff0f0}
+.notice{padding:12px;border-radius:10px;background:#fff8dd;border:1px solid #f2dfa0}
+footer{text-align:center;padding:22px;color:var(--muted);font-size:13px}
+@media(max-width:520px){header h1{font-size:24px}main{padding:10px}.card{padding:13px}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><h1>📚 Study Bharat</h1><p>किताबें • स्कूल टेस्ट • प्रतियोगी परीक्षा • AI Teacher</p></div></header>
+<nav>
+<button onclick="showTab('home')">होम</button><button onclick="showTab('books')">Direct Books</button><button onclick="showTab('tests')">25 प्रश्न टेस्ट</button><button onclick="showTab('exams')">Govt Exams</button><button onclick="showTab('ai')">AI Teacher</button><button onclick="showTab('history')">मेरे रिजल्ट</button>
+</nav>
+<main>
+<section id="home" class="section active">
+<div class="card"><span class="pill">Study Bharat</span><h2>पढ़ाई और तैयारी एक जगह</h2><p>बिहार बोर्ड और NCERT की आधिकारिक किताबें खोलें, 25 प्रश्नों के अभ्यास टेस्ट दें और अपना स्कोर देखें।</p>
+<div class="grid"><button class="btn" onclick="showTab('books')">📖 किताबें खोलें</button><button class="btn secondary" onclick="showTab('tests')">✍️ टेस्ट शुरू करें</button></div></div>
+<div class="card"><h2>ज़रूरी बात</h2><p class="muted">किताबों के बटन आधिकारिक पोर्टल खोलते हैं; वहाँ कक्षा, विषय और भाषा चुनें। टेस्ट प्रश्न अभ्यास के लिए हैं, आधिकारिक परीक्षा-पत्र नहीं।</p></div>
+</section>
+
+<section id="books" class="section">
+<div class="card"><h2>📚 Direct Book Links</h2><p>कक्षा 1 से 12 तक की किताबें और ई-कंटेंट पाने के लिए आधिकारिक पोर्टल चुनें।</p>
+<a class="booklink" href="https://scert.bihar.gov.in/textbooks" target="_blank" rel="noopener"><span><b>बिहार SCERT Textbooks</b><small>कक्षा I–XII, बिहार की पाठ्यपुस्तकें</small></span><b>खोलें ↗</b></a>
+<a class="booklink" href="https://bepclots.bihar.gov.in/" target="_blank" rel="noopener"><span><b>Bihar e-LOTS Library</b><small>बिहार की कक्षा 1–12 ई-लाइब्रेरी</small></span><b>खोलें ↗</b></a>
+<a class="booklink" href="https://ncert.nic.in/textbook.php?ln=hi" target="_blank" rel="noopener"><span><b>NCERT हिंदी Textbooks</b><small>हिंदी, अंग्रेज़ी और उपलब्ध अन्य भाषाएँ</small></span><b>खोलें ↗</b></a>
+<a class="booklink" href="https://ncert.nic.in/textbook.php?ln=en" target="_blank" rel="noopener"><span><b>NCERT English Textbooks</b><small>कक्षा 1–12 की किताबें/अध्याय</small></span><b>खोलें ↗</b></a>
+<div class="notice">किताब चुनने के बाद पोर्टल पर कक्षा, विषय और भाषा से सही PDF खोलें। किताबों की कॉपी इस वेबसाइट पर अपलोड नहीं की गई है; लिंक आधिकारिक स्रोतों पर जाते हैं।</div>
+</div></section>
+
+<section id="tests" class="section">
+<div class="card"><h2>✍️ 25 प्रश्नों का टेस्ट</h2>
+<div class="grid">
+<div><label for="testType">टेस्ट का प्रकार</label><select id="testType"><option value="school">स्कूल टेस्ट</option><option value="competitive">प्रतियोगी परीक्षा</option><option value="all">मिश्रित टेस्ट</option></select></div>
+<div><label for="testSubject">विषय</label><select id="testSubject"><option value="all">सभी विषय</option><option value="math">गणित</option><option value="science">विज्ञान</option><option value="english">English</option><option value="hindi">हिंदी</option><option value="gk">सामान्य ज्ञान</option><option value="reasoning">रीजनिंग</option></select></div>
+</div>
+<p class="muted">हर नए टेस्ट में उपलब्ध प्रश्नों में से 25 अलग प्रश्न चुने जाते हैं। एक टेस्ट के अंदर कोई प्रश्न दोहराया नहीं जाएगा।</p>
+<button class="btn full" onclick="startTest()">नया 25 प्रश्न टेस्ट शुरू करें</button>
+<div id="questionArea"></div></div>
+</section>
+
+<section id="exams" class="section">
+<div class="card"><h2>🎯 प्रतियोगी परीक्षा — Official Links</h2>
+<a class="booklink" href="https://bpsc.bihar.gov.in/" target="_blank" rel="noopener"><span><b>BPSC</b><small>बिहार लोक सेवा आयोग</small></span><b>↗</b></a>
+<a class="booklink" href="https://bpssc.bihar.gov.in/" target="_blank" rel="noopener"><span><b>BPSSC</b><small>बिहार पुलिस सब-ऑर्डिनेट सर्विस कमीशन</small></span><b>↗</b></a>
+<a class="booklink" href="https://bssc.bihar.gov.in/" target="_blank" rel="noopener"><span><b>BSSC</b><small>बिहार कर्मचारी चयन आयोग</small></span><b>↗</b></a>
+<a class="booklink" href="https://www.biharboardonline.com/" target="_blank" rel="noopener"><span><b>Bihar Board</b><small>मॉडल पेपर, पाठ्यक्रम और परीक्षा सूचनाएँ</small></span><b>↗</b></a>
+<a class="booklink" href="https://upsc.gov.in/" target="_blank" rel="noopener"><span><b>UPSC</b><small>सिविल सेवा व अन्य परीक्षाएँ</small></span><b>↗</b></a>
+<a class="booklink" href="https://ssc.gov.in/" target="_blank" rel="noopener"><span><b>SSC</b><small>कर्मचारी चयन आयोग</small></span><b>↗</b></a>
+<a class="booklink" href="https://www.rrbcdg.gov.in/" target="_blank" rel="noopener"><span><b>Railway Recruitment</b><small>रेलवे भर्ती सूचना</small></span><b>↗</b></a>
+<a class="booklink" href="https://www.ibps.in/" target="_blank" rel="noopener"><span><b>IBPS</b><small>बैंक भर्ती परीक्षाएँ</small></span><b>↗</b></a>
+<a class="booklink" href="https://sbi.co.in/web/careers" target="_blank" rel="noopener"><span><b>SBI Careers</b><small>बैंक भर्ती और नोटिस</small></span><b>↗</b></a>
+<p class="muted">आवेदन की तारीख, पात्रता और सिलेबस के लिए संबंधित आधिकारिक वेबसाइट पर जारी नवीनतम नोटिस ही मानें।</p></div>
+</section>
+
+<section id="ai" class="section"><div class="card"><h2>🤖 AI Teacher</h2><p class="muted">सवाल पूछें। इसके लिए आपका Cloudflare Worker सही तरीके से सेट होना चाहिए।</p>
+<label for="aiQuestion">अपना सवाल लिखें</label><textarea id="aiQuestion" rows="4" placeholder="जैसे: प्रकाश संश्लेषण आसान हिंदी में समझाइए"></textarea>
+<button class="btn full" onclick="askAI()">AI से जवाब पूछें</button><div id="aiAnswer" class="qbox" style="display:none"></div>
+</div></section>
+
+<section id="history" class="section"><div class="card"><h2>📈 मेरे रिजल्ट</h2><div id="historyList"></div><button class="btn secondary" onclick="clearHistory()">रिजल्ट हिस्ट्री मिटाएँ</button></div></section>
+</main>
+<footer>Study Bharat • आधिकारिक किताबों के लिंक • अभ्यास हेतु टेस्ट</footer>
+
+<script>
+const WORKER_URL = "https://stadybharat.skybro03at.workers.dev/";
+const questions = [
+{type:"school",subject:"math",q:"25 + 17 = ?",o:["32","42","52","41"],a:1,why:"25 + 17 = 42।"},
+{type:"school",subject:"math",q:"9 × 7 = ?",o:["56","63","72","49"],a:1,why:"9 गुणा 7 = 63।"},
+{type:"school",subject:"math",q:"144 का वर्गमूल क्या है?",o:["10","11","12","14"],a:2,why:"12 × 12 = 144।"},
+{type:"school",subject:"math",q:"एक त्रिभुज के कोणों का योग कितना होता है?",o:["90°","180°","270°","360°"],a:1,why:"त्रिभुज के आंतरिक कोणों का योग 180° है।"},
+{type:"school",subject:"math",q:"3/4 का दशमलव रूप क्या है?",o:["0.25","0.5","0.75","1.25"],a:2,why:"3 ÷ 4 = 0.75।"},
+{type:"school",subject:"math",q:"यदि x + 8 = 15, तो x = ?",o:["5","6","7","8"],a:2,why:"15 − 8 = 7।"},
+{type:"school",subject:"math",q:"12 और 18 का HCF क्या है?",o:["3","6","9","12"],a:1,why:"12 और 18 का सबसे बड़ा समान गुणनखंड 6 है।"},
+{type:"school",subject:"math",q:"एक वर्ग की भुजा 5 cm है। परिमाप?",o:["10 cm","15 cm","20 cm","25 cm"],a:2,why:"वर्ग का परिमाप 4 × भुजा = 20 cm।"},
+{type:"school",subject:"science",q:"पौधे भोजन बनाने के लिए किस प्रक्रिया का उपयोग करते हैं?",o:["श्वसन","प्रकाश संश्लेषण","वाष्पीकरण","पाचन"],a:1,why:"हरे पौधे प्रकाश संश्लेषण से भोजन बनाते हैं।"},
+{type:"school",subject:"science",q:"पानी का रासायनिक सूत्र क्या है?",o:["CO₂","O₂","H₂O","NaCl"],a:2,why:"पानी का सूत्र H₂O है।"},
+{type:"school",subject:"science",q:"मानव शरीर में रक्त पंप करने वाला अंग कौन है?",o:["फेफड़ा","हृदय","गुर्दा","यकृत"],a:1,why:"हृदय रक्त को पूरे शरीर में पंप करता है।"},
+{type:"school",subject:"science",q:"पृथ्वी को ऊर्जा का मुख्य प्राकृतिक स्रोत कौन-सा है?",o:["चंद्रमा","सूर्य","मंगल","तारे"],a:1,why:"पृथ्वी की ऊर्जा का प्रमुख स्रोत सूर्य है।"},
+{type:"school",subject:"science",q:"सामान्य वायुदाब पर पानी लगभग किस तापमान पर उबलता है?",o:["0°C","50°C","100°C","150°C"],a:2,why:"सामान्य वायुदाब पर पानी 100°C पर उबलता है।"},
+{type:"school",subject:"science",q:"बल की SI इकाई क्या है?",o:["जूल","वाट","न्यूटन","पास्कल"],a:2,why:"बल की SI इकाई न्यूटन है।"},
+{type:"school",subject:"science",q:"पौधों में पानी का अवशोषण मुख्यतः कौन करता है?",o:["फूल","जड़","फल","बीज"],a:1,why:"जड़ें मिट्टी से पानी और खनिज लेती हैं।"},
+{type:"school",subject:"english",q:"Choose the correct plural of “child”.",o:["childs","childes","children","childrens"],a:2,why:"Child का plural children है।"},
+{type:"school",subject:"english",q:"Choose the correct sentence.",o:["She are happy.","She is happy.","She am happy.","She be happy."],a:1,why:"She के साथ is आता है।"},
+{type:"school",subject:"english",q:"Past tense of “go” is:",o:["goed","gone","went","going"],a:2,why:"Go का simple past went है।"},
+{type:"school",subject:"english",q:"Opposite of “ancient” is:",o:["old","modern","past","historic"],a:1,why:"Ancient का विपरीत modern है।"},
+{type:"school",subject:"english",q:"Fill in the blank: I ___ a student.",o:["is","are","am","be"],a:2,why:"I के साथ am आता है।"},
+{type:"school",subject:"hindi",q:"‘दिन’ का विलोम शब्द क्या है?",o:["सुबह","रात","दोपहर","प्रकाश"],a:1,why:"दिन का सामान्य विलोम रात है।"},
+{type:"school",subject:"hindi",q:"‘जल’ का समानार्थी शब्द कौन-सा है?",o:["अग्नि","नीर","वायु","धरा"],a:1,why:"जल का समानार्थी नीर है।"},
+{type:"school",subject:"hindi",q:"‘विद्यालय’ का अर्थ क्या है?",o:["खेल का मैदान","पढ़ने का स्थान","बाजार","अस्पताल"],a:1,why:"विद्यालय शिक्षा प्राप्त करने का स्थान है।"},
+{type:"school",subject:"hindi",q:"‘सुंदर’ शब्द का विलोम क्या है?",o:["मनोहर","आकर्षक","कुरूप","सुशील"],a:2,why:"सुंदर का विलोम कुरूप है।"},
+{type:"school",subject:"hindi",q:"‘लड़का’ का बहुवचन क्या है?",o:["लड़की","लड़के","लड़कपन","लड़कों ने"],a:1,why:"सामान्य बहुवचन रूप लड़के है।"},
+{type:"school",subject:"gk",q:"भारत की राजधानी क्या है?",o:["मुंबई","नई दिल्ली","कोलकाता","चेन्नई"],a:1,why:"भारत की राजधानी नई दिल्ली है।"},
+{type:"school",subject:"gk",q:"भारत का राष्ट्रीय पशु कौन है?",o:["शेर","हाथी","बाघ","मोर"],a:2,why:"भारत का राष्ट्रीय पशु बाघ है।"},
+{type:"school",subject:"gk",q:"भारत का संविधान कब लागू हुआ?",o:["15 अगस्त 1947","26 जनवरी 1950","2 अक्टूबर 1949","26 नवंबर 1950"],a:1,why:"संविधान 26 जनवरी 1950 को लागू हुआ।"},
+{type:"school",subject:"gk",q:"सौरमंडल का सबसे बड़ा ग्रह कौन है?",o:["पृथ्वी","मंगल","बृहस्पति","शुक्र"],a:2,why:"बृहस्पति सौरमंडल का सबसे बड़ा ग्रह है।"},
+{type:"school",subject:"gk",q:"भारत का राष्ट्रीय गान किसने लिखा?",o:["बंकिमचंद्र चट्टोपाध्याय","रवीन्द्रनाथ टैगोर","प्रेमचंद","सरोजिनी नायडू"],a:1,why:"जन गण मन रवीन्द्रनाथ टैगोर ने लिखा।"},
+{type:"competitive",subject:"math",q:"240 का 25% कितना है?",o:["40","50","60","80"],a:2,why:"240 × 25/100 = 60।"},
+{type:"competitive",subject:"math",q:"श्रृंखला पूरी करें: 2, 4, 8, 16, __",o:["18","24","30","32"],a:3,why:"हर बार संख्या दोगुनी हो रही है।"},
+{type:"competitive",subject:"math",q:"यदि किसी वस्तु का मूल्य ₹500 और छूट 10% है, तो छूट कितनी?",o:["₹5","₹10","₹50","₹100"],a:2,why:"500 का 10% = ₹50।"},
+{type:"competitive",subject:"math",q:"60 km/h की गति से 2 घंटे में दूरी कितनी होगी?",o:["30 km","60 km","100 km","120 km"],a:3,why:"दूरी = गति × समय = 120 km।"},
+{type:"competitive",subject:"math",q:"15, 20 और 25 का औसत क्या है?",o:["15","20","25","60"],a:1,why:"(15+20+25) ÷ 3 = 20।"},
+{type:"competitive",subject:"reasoning",q:"अलग शब्द चुनें:",o:["सेब","आम","गाजर","केला"],a:2,why:"गाजर सब्ज़ी है, बाकी फल हैं।"},
+{type:"competitive",subject:"reasoning",q:"यदि CAT को DBU लिखा जाए, तो DOG को कैसे लिखेंगे?",o:["EPH","CNG","FQI","EOG"],a:0,why:"हर अक्षर को अगले अक्षर से बदला गया है।"},
+{type:"competitive",subject:"reasoning",q:"श्रृंखला: 5, 10, 15, 20, __",o:["22","24","25","30"],a:2,why:"हर बार 5 जोड़ा गया है।"},
+{type:"competitive",subject:"reasoning",q:"सोमवार के 3 दिन बाद कौन-सा दिन होगा?",o:["मंगलवार","बुधवार","गुरुवार","शुक्रवार"],a:2,why:"मंगलवार 1, बुधवार 2, गुरुवार 3 दिन बाद।"},
+{type:"competitive",subject:"reasoning",q:"A, C, E, G, __",o:["H","I","J","K"],a:1,why:"एक अक्षर छोड़कर क्रम है: A, C, E, G, I।"},
+{type:"competitive",subject:"gk",q:"बिहार की राजधानी क्या है?",o:["गया","भागलपुर","पटना","मुजफ्फरपुर"],a:2,why:"बिहार की राजधानी पटना है।"},
+{type:"competitive",subject:"gk",q:"भारतीय संविधान सभा की प्रारूप समिति के अध्यक्ष कौन थे?",o:["डॉ. राजेंद्र प्रसाद","डॉ. बी. आर. आंबेडकर","जवाहरलाल नेहरू","सरदार पटेल"],a:1,why:"प्रारूप समिति के अध्यक्ष डॉ. बी. आर. आंबेडकर थे।"},
+{type:"competitive",subject:"gk",q:"भारत में मौलिक कर्तव्य किस संविधान संशोधन से जोड़े गए?",o:["42वें","44वें","52वें","61वें"],a:0,why:"मौलिक कर्तव्य 42वें संशोधन, 1976 से जोड़े गए।"},
+{type:"competitive",subject:"gk",q:"RBI का मुख्यालय कहाँ है?",o:["नई दिल्ली","कोलकाता","मुंबई","चेन्नई"],a:2,why:"भारतीय रिज़र्व बैंक का मुख्यालय मुंबई में है।"},
+{type:"competitive",subject:"gk",q:"भारत में हरित क्रांति मुख्यतः किससे संबंधित है?",o:["दूध उत्पादन","खाद्यान्न उत्पादन","मछली उत्पादन","तेल उत्पादन"],a:1,why:"हरित क्रांति का संबंध कृषि और खाद्यान्न उत्पादन बढ़ने से है।"},
+{type:"competitive",subject:"english",q:"Choose the synonym of “rapid”.",o:["slow","quick","weak","late"],a:1,why:"Rapid का समानार्थी quick है।"},
+{type:"competitive",subject:"english",q:"Choose the correctly spelled word.",o:["Goverment","Government","Govarnment","Governmant"],a:1,why:"सही spelling Government है।"},
+{type:"competitive",subject:"english",q:"Fill in: Neither Ram nor Shyam ___ present.",o:["are","were","is","be"],a:2,why:"Neither...nor में निकट subject Shyam singular है, इसलिए is।"},
+{type:"competitive",subject:"hindi",q:"‘आकाश’ का समानार्थी शब्द है:",o:["गगन","पाताल","सागर","वन"],a:0,why:"आकाश का समानार्थी गगन है।"},
+{type:"competitive",subject:"hindi",q:"‘जो कभी न मरे’ के लिए एक शब्द है:",o:["अजर","अमर","अज्ञानी","अदृश्य"],a:1,why:"जो कभी न मरे—अमर।"},
+{type:"competitive",subject:"science",q:"विटामिन C की कमी से कौन-सा रोग हो सकता है?",o:["रिकेट्स","स्कर्वी","बेरी-बेरी","रतौंधी"],a:1,why:"विटामिन C की कमी से स्कर्वी हो सकता है।"},
+{type:"competitive",subject:"science",q:"विद्युत धारा की SI इकाई क्या है?",o:["वोल्ट","ओम","एम्पियर","वाट"],a:2,why:"विद्युत धारा की SI इकाई एम्पियर है।"},
+{type:"competitive",subject:"science",q:"ध्वनि किस माध्यम में यात्रा नहीं कर सकती?",o:["जल","वायु","इस्पात","निर्वात"],a:3,why:"ध्वनि को माध्यम चाहिए; निर्वात में नहीं चलती।"},
+{type:"competitive",subject:"science",q:"मानव रक्त का सामान्य pH लगभग कितना होता है?",o:["2.4","5.0","7.4","9.8"],a:2,why:"रक्त का pH सामान्यतः लगभग 7.35–7.45 होता है।"},
+{type:"competitive",subject:"math",q:"12 और 16 का LCM क्या है?",o:["24","36","48","64"],a:2,why:"12 और 16 का लघुत्तम समापवर्त्य 48 है।"}
+];
+let currentTest=[], answers={};
+function showTab(id){document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');if(id==='history')renderHistory();window.scrollTo({top:0,behavior:'smooth'});}
+function startTest(){
+ const type=document.getElementById('testType').value, subject=document.getElementById('testSubject').value;
+ let pool=questions.filter(q=>(type==='all'||q.type===type)&&(subject==='all'||q.subject===subject));
+ if(pool.length<25){alert('इस विषय और टेस्ट प्रकार में अभी '+pool.length+' प्रश्न उपलब्ध हैं। 25 प्रश्न पाने के लिए विषय “सभी विषय” चुनें।');return;}
+ pool=pool.map(q=>({q,sort:Math.random()})).sort((a,b)=>a.sort-b.sort).slice(0,25).map(x=>x.q);
+ currentTest=pool;answers={};renderQuestions();
+}
+function renderQuestions(){
+ const area=document.getElementById('questionArea');area.innerHTML='<h3>आपका टेस्ट: 25 प्रश्न</h3><p class="muted">हर प्रश्न का एक उत्तर चुनें। अंत में टेस्ट जमा करें।</p>';
+ currentTest.forEach((q,i)=>{let box=document.createElement('div');box.className='qbox';box.innerHTML='<b>प्रश्न '+(i+1)+'. '+q.q+'</b>';q.o.forEach((opt,j)=>{let lab=document.createElement('label');lab.className='option';lab.innerHTML='<input type="radio" name="q'+i+'" value="'+j+'"> <span>'+String.fromCharCode(65+j)+'. '+opt+'</span>';lab.querySelector('input').onchange=()=>answers[i]=j;box.appendChild(lab)});area.appendChild(box)});
+ const submit=document.createElement('button');submit.className='btn full';submit.textContent='टेस्ट जमा करें और रिजल्ट देखें';submit.onclick=submitTest;area.appendChild(submit);area.scrollIntoView({behavior:'smooth',block:'start'});
+}
+function submitTest(){
+ let score=0;currentTest.forEach((q,i)=>{if(answers[i]===q.a)score++});
+ const result={date:new Date().toLocaleString('hi-IN'),type:document.getElementById('testType').value,subject:document.getElementById('testSubject').value,total:25,score,percent:Math.round(score/25*100)};
+ let hist=JSON.parse(localStorage.getItem('studyBharatResults')||'[]');hist.unshift(result);localStorage.setItem('studyBharatResults',JSON.stringify(hist.slice(0,50)));
+ const area=document.getElementById('questionArea');area.innerHTML='<div class="card"><h2>रिजल्ट</h2><h3>'+score+' / 25 सही</h3><p>प्रतिशत: '+result.percent+'%</p><p>'+ (result.percent>=80?'बहुत अच्छा! अभ्यास जारी रखें।':result.percent>=50?'अच्छा प्रयास! गलत उत्तरों को दोहराएँ।':'कोई बात नहीं—समझकर फिर अभ्यास करें।')+'</p><button class="btn" onclick="reviewTest()">उत्तर और व्याख्या देखें</button> <button class="btn secondary" onclick="startTest()">नया टेस्ट</button></div>';
+ window.scrollTo({top:0,behavior:'smooth'});
+}
+function reviewTest(){
+ const area=document.getElementById('questionArea');area.innerHTML='<h3>उत्तर और व्याख्या</h3>';
+ currentTest.forEach((q,i)=>{let box=document.createElement('div');box.className='qbox';let chosen=answers[i];box.innerHTML='<b>'+(i+1)+'. '+q.q+'</b>';q.o.forEach((opt,j)=>{let d=document.createElement('div');d.className='option'+(j===q.a?' correct':(chosen===j?' wrong':''));d.textContent=String.fromCharCode(65+j)+'. '+opt+(j===q.a?' ✓ सही उत्तर':'');box.appendChild(d)});let p=document.createElement('p');p.className='muted';p.textContent='समझें: '+q.why;box.appendChild(p);area.appendChild(box)});let b=document.createElement('button');b.className='btn full';b.textContent='फिर से टेस्ट दें';b.onclick=startTest;area.appendChild(b);
+}
+async function askAI(){
+ const q=document.getElementById('aiQuestion').value.trim(),out=document.getElementById('aiAnswer');if(!q){alert('पहले अपना सवाल लिखें।');return;}
+ out.style.display='block';out.textContent='जवाब तैयार हो रहा है…';
+ try{const res=await fetch(WORKER_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({question:q})});if(!res.ok)throw new Error('Worker HTTP '+res.status);const data=await res.json();out.textContent=data.answer||data.response||'जवाब नहीं मिला। Worker में JSON {answer: "..."} लौटना चाहिए।';}
+ catch(e){out.textContent='AI जवाब नहीं मिल पाया। Cloudflare Worker का URL, GEMINI_API_KEY secret और Worker code जाँचें। विवरण: '+e.message;}
+}
+function renderHistory(){
+ const box=document.getElementById('historyList'),hist=JSON.parse(localStorage.getItem('studyBharatResults')||'[]');
+ if(!hist.length){box.innerHTML='<p class="muted">अभी कोई टेस्ट रिजल्ट नहीं है। टेस्ट पूरा करने के बाद यहाँ दिखेगा।</p>';return;}
+ box.innerHTML=hist.map(h=>'<div class="qbox"><b>'+h.score+'/'+h.total+' सही ('+h.percent+'%)</b><p class="muted">'+h.date+' • '+(h.type==='school'?'स्कूल':h.type==='competitive'?'प्रतियोगी':'मिश्रित')+' • '+h.subject+'</p></div>').join('');
+}
+function clearHistory(){if(confirm('क्या आप पूरी रिजल्ट हिस्ट्री मिटाना चाहते हैं?')){localStorage.removeItem('studyBharatResults');renderHistory();}}
+</script>
+</body>
+</html>
