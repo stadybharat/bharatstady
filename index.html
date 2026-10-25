@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Study Bharat</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f1f5f9;
+      color: #172033;
+    }
+    header {
+      background: #087443;
+      color: white;
+      padding: 24px 16px;
+      text-align: center;
+    }
+    main {
+      max-width: 650px;
+      margin: 20px auto;
+      padding: 16px;
+    }
+    .card {
+      background: white;
+      padding: 18px;
+      border-radius: 14px;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 8px #00000010;
+    }
+    textarea {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #bbb;
+    }
+    button {
+      background: #087443;
+      color: white;
+      padding: 12px 18px;
+      border: 0;
+      border-radius: 8px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    #answer {
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🇮🇳 Study Bharat</h1>
+    <p>सीखें • अभ्यास करें • आगे बढ़ें</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>🤖 AI Teacher</h2>
+      <p>हिंदी या English में अपना सवाल पूछें।</p>
+      <textarea id="question" rows="3"
+        maxlength="2000" placeholder="अपना सवाल लिखें..."></textarea>
+      <button id="ask" onclick="askAI()">सवाल पूछें</button>
+      <p id="status" role="status"></p>
+      <div id="answer"></div>
+    </section>
+
+    <section class="card">
+      <h2>📚 पढ़ाई के सेक्शन</h2>
+      <p>स्कूल की पढ़ाई और सरकारी नौकरी की परीक्षा की तैयारी।</p>
+      <ul>
+        <li>Previous Year Papers</li>
+        <li>Model Papers</li>
+        <li>Mock Tests</li>
+        <li>Quiz और Maths Games</li>
+      </ul>
+      <p>इन सेक्शनों की सामग्री अगले चरण में जोड़ी जा सकती है।</p>
+    </section>
+  </main>
+
+  <script>
+    async function askAI() {
+      const q = document.getElementById("question").value.trim();
+      const status = document.getElementById("status");
+      const answer = document.getElementById("answer");
+      const btn = document.getElementById("ask");
+
+      if (!q) {
+        status.textContent = "पहले सवाल लिखें।";
+        return;
+      }
+
+      btn.disabled = true;
+      status.textContent = "जवाब तैयार हो रहा है...";
+      answer.textContent = "";
+
+      try {
+        const res = await fetch(
+          "https://stadybharat.skybro03at.workers.dev/",
+          {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({question: q})
+          }
+        );
+        const data = await res.json();
+        if (!res.ok) throw new Error("API request failed");
+        answer.textContent = data.answer || "जवाब नहीं मिला।";
+        status.textContent = "";
+      } catch (e) {
+        status.textContent =
+          "कनेक्शन नहीं हुआ। Worker और API Secret जाँचें।";
+      } finally {
+        btn.disabled = false;
+      }
+    }
+  </script>
+</body>
+  </html>
+        
